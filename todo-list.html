@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <script src="jquery-3.5.1.js" ></script>
+    <script src="jquery-ui.js" "></script>
+    <script>
+        $(document).ready(function() {
+          $('#project').tabs();
+          $("ul").sortable({axis:"x",contaiment:"#project"});
+          $("ol").sortable({axis:"y",contaiment:"#project"});
+          $('#btnAddProject').button();
+        });
+    </script>
+    <style>
+        #container{
+            width: 700px;
+            height: 450px;
+            margin: auto;
+            border: 2px solid rgb(125,181,66);
+        }
+        #main{
+          background: #6eb7d6;
+        }
+        h2{
+          color: rgb(125,181,66);
+          text-align: center
+        }
+        #project{
+          width: 650px;
+          height: 250px;
+          margin: 0px auto;
+        }
+        ol li {
+          border:1px dotted black;
+          cursor: pointer;
+         padding: 5px; 
+         margin-bottom: 5px;
+        }
+        ol li:hover{
+          background: #6eb7d6;
+        }
+
+        #btnAddProject{
+          margin-left: 550px;
+          background: #6eb7d6 ;
+        }
+        #btnAddProject:hover{
+          background: #9ad2eb;
+        }
+    </style>
+  </head>
+  <body>
+      <div id="container">
+          <h2>To Do List</h2>
+          <button id="btnAddProject">Add Project</button>
+          <div id="project">
+            <ul id="main">
+              <li><a href="#personal">Personal</a></li>
+              <li><a href="#work">Work</a></li>
+
+            </ul>
+            <ol id="personal">
+              <li><input type="checkbox">Doctor appointment</li>
+              <li><input type="checkbox">Call the plumber</li>
+            </ol>
+            <ol id="work">
+              <li><input type="checkbox">Complete test case document</li>
+              <li><input type="checkbox">Meet project manager</li>
+              <li><input type="checkbox">Record jQuery video</li>
+
+            </ol>
+          </div>
+      </div>
+
+  </body>
+</html>
